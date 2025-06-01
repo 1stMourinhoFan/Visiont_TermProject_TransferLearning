@@ -1,0 +1,128 @@
+Using device: cuda
+Classes: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+Train size: 45000, Validation size: 5000
+Data augmentation applied to training set:
+- Random Horizontal Flip (20%)
+- Random Rotation (±15°) (20%)
+- Random Resized Crop (20%)
+- Color Jitter (brightness, contrast, saturation, hue) (20%)
+- Random Grayscale (10%)
+- Gaussian Blur (20%)
+- Random Erasing (10%)
+
+==================================================
+0. ResNet-50 Scratch Training
+==================================================
+Epoch 1/10, Train Loss: 1.9060, Val Loss: 1.6007, LR: 0.000600
+Epoch 2/10, Train Loss: 1.5409, Val Loss: 1.7094, LR: 0.000600
+Epoch 3/10, Train Loss: 1.4309, Val Loss: 1.6034, LR: 0.000600
+Epoch 4/10, Train Loss: 1.4260, Val Loss: 1.3517, LR: 0.000600
+Epoch 5/10, Train Loss: 1.2854, Val Loss: 1.2610, LR: 0.000600
+Epoch 6/10, Train Loss: 1.2439, Val Loss: 1.1017, LR: 0.000600
+Epoch 7/10, Train Loss: 1.1183, Val Loss: 1.1077, LR: 0.000600
+Epoch 8/10, Train Loss: 1.4322, Val Loss: 1.7399, LR: 0.000600
+Epoch 9/10, Train Loss: 1.2810, Val Loss: 1.1019, LR: 0.000600
+Epoch 10/10, Train Loss: 1.1781, Val Loss: 1.0176, LR: 0.000600
+
+총 학습 시간: 287.95초 (4.80분)
+Model saved as 'resnet50_scratch.pth'
+Scratch Training - Overall Test Accuracy: 64.99%
+
+==================================================
+1. ResNet-50 Classifier Training (FC layer only)
+==================================================
+Epoch 1/10, Train Loss: 1.8007, Val Loss: 1.5446, LR: 0.000600
+Epoch 2/10, Train Loss: 1.6331, Val Loss: 1.5203, LR: 0.000600
+Epoch 3/10, Train Loss: 1.5872, Val Loss: 1.4650, LR: 0.000600
+Epoch 4/10, Train Loss: 1.5650, Val Loss: 1.4313, LR: 0.000600
+Epoch 5/10, Train Loss: 1.5437, Val Loss: 1.3971, LR: 0.000600
+Epoch 6/10, Train Loss: 1.5281, Val Loss: 1.3882, LR: 0.000600
+Epoch 7/10, Train Loss: 1.5202, Val Loss: 1.4243, LR: 0.000600
+Epoch 8/10, Train Loss: 1.5105, Val Loss: 1.3733, LR: 0.000600
+Epoch 9/10, Train Loss: 1.4988, Val Loss: 1.3873, LR: 0.000600
+Epoch 10/10, Train Loss: 1.4914, Val Loss: 1.3722, LR: 0.000600
+
+총 학습 시간: 226.59초 (3.78분)
+Model saved as 'resnet50_classifier.pth'
+Classifier Training - Overall Test Accuracy: 53.69%
+
+==================================================
+2. ResNet-50 Whole Training (All layers)
+==================================================
+Epoch 1/10, Train Loss: 0.9656, Val Loss: 0.6473, LR: 0.000600
+Epoch 2/10, Train Loss: 0.6608, Val Loss: 0.5890, LR: 0.000600
+Epoch 3/10, Train Loss: 0.5711, Val Loss: 0.5674, LR: 0.000600
+Epoch 4/10, Train Loss: 0.5312, Val Loss: 0.5546, LR: 0.000600
+Epoch 5/10, Train Loss: 0.4902, Val Loss: 0.5142, LR: 0.000600
+Epoch 6/10, Train Loss: 0.4357, Val Loss: 0.4791, LR: 0.000600
+Epoch 7/10, Train Loss: 0.4307, Val Loss: 0.4800, LR: 0.000600
+Epoch 8/10, Train Loss: 0.3760, Val Loss: 0.4971, LR: 0.000600
+Epoch 9/10, Train Loss: 0.3481, Val Loss: 0.4989, LR: 0.000600
+Epoch 10/10, Train Loss: 0.3297, Val Loss: 0.4694, LR: 0.000600
+Epoch 10/10, Train Loss: 0.3297, Val Loss: 0.4694, LR: 0.000600
+
+
+총 학습 시간: 294.87초 (4.91분)
+Model saved as 'resnet50_whole_layer.pth'
+Whole_layer Training - Overall Test Accuracy: 84.72%
+
+==================================================
+3. ResNet-50 last Layers Fine-tuning (Layer 4 + FC)
+==================================================
+Epoch 1/10, Train Loss: 1.1622, Val Loss: 0.8428, LR: 0.000600
+Epoch 2/10, Train Loss: 0.8836, Val Loss: 0.7410, LR: 0.000600
+Epoch 3/10, Train Loss: 0.7796, Val Loss: 0.7205, LR: 0.000600
+Epoch 2/10, Train Loss: 0.8836, Val Loss: 0.7410, LR: 0.000600
+Epoch 3/10, Train Loss: 0.7796, Val Loss: 0.7205, LR: 0.000600
+Epoch 4/10, Train Loss: 0.7155, Val Loss: 0.7079, LR: 0.000600
+Epoch 4/10, Train Loss: 0.7155, Val Loss: 0.7079, LR: 0.000600
+Epoch 5/10, Train Loss: 0.6687, Val Loss: 0.6999, LR: 0.000600
+Epoch 6/10, Train Loss: 0.6244, Val Loss: 0.7028, LR: 0.000600
+Epoch 7/10, Train Loss: 0.5924, Val Loss: 0.7168, LR: 0.000600
+Epoch 5/10, Train Loss: 0.6687, Val Loss: 0.6999, LR: 0.000600
+Epoch 6/10, Train Loss: 0.6244, Val Loss: 0.7028, LR: 0.000600
+Epoch 7/10, Train Loss: 0.5924, Val Loss: 0.7168, LR: 0.000600
+Epoch 8/10, Train Loss: 0.5683, Val Loss: 0.7155, LR: 0.000600
+Epoch 9/10, Train Loss: 0.5376, Val Loss: 0.7169, LR: 0.000600
+Epoch 10/10, Train Loss: 0.5091, Val Loss: 0.6988, LR: 0.000600
+
+총 학습 시간: 236.41초 (3.94분)
+Model saved as 'resnet50_last_layer.pth'
+Last Layers Fine-tuning - Overall Test Accuracy: 77.48%
+
+==================================================
+4. ResNet-50 Late Layers Fine-tuning (Layer 3,4 + FC)
+==================================================
+Epoch 1/10, Train Loss: 0.9479, Val Loss: 0.6183, LR: 0.000600
+Epoch 2/10, Train Loss: 0.6647, Val Loss: 0.5568, LR: 0.000600
+Epoch 3/10, Train Loss: 0.5734, Val Loss: 0.5178, LR: 0.000600
+Epoch 4/10, Train Loss: 0.5105, Val Loss: 0.5049, LR: 0.000600
+Epoch 5/10, Train Loss: 0.4545, Val Loss: 0.4857, LR: 0.000600
+Epoch 2/10, Train Loss: 0.6647, Val Loss: 0.5568, LR: 0.000600
+Epoch 3/10, Train Loss: 0.5734, Val Loss: 0.5178, LR: 0.000600
+Epoch 4/10, Train Loss: 0.5105, Val Loss: 0.5049, LR: 0.000600
+Epoch 5/10, Train Loss: 0.4545, Val Loss: 0.4857, LR: 0.000600
+Epoch 6/10, Train Loss: 0.4293, Val Loss: 0.5087, LR: 0.000600
+Epoch 7/10, Train Loss: 0.3922, Val Loss: 0.5324, LR: 0.000600
+Epoch 8/10, Train Loss: 0.3783, Val Loss: 0.4949, LR: 0.000600
+Epoch 6/10, Train Loss: 0.4293, Val Loss: 0.5087, LR: 0.000600
+Epoch 7/10, Train Loss: 0.3922, Val Loss: 0.5324, LR: 0.000600
+Epoch 8/10, Train Loss: 0.3783, Val Loss: 0.4949, LR: 0.000600
+Epoch 9/10, Train Loss: 0.3412, Val Loss: 0.5239, LR: 0.000600
+Epoch 10/10, Train Loss: 0.3260, Val Loss: 0.5072, LR: 0.000600
+
+총 학습 시간: 263.55초 (4.39분)
+Model saved as 'resnet50_last_layer.pth'
+Late Layers Fine-tuning - Overall Test Accuracy: 85.00%
+
+==================================================
+SUMMARY OF RESULTS
+==================================================
+Scratch Training - Overall Accuracy: 64.99%
+Classifier Training (FC only) - Overall Accuracy: 53.69%
+Whole Training - Overall Accuracy: 84.72%
+Last Layers Fine-tuning (Layer 4) - Overall Accuracy: 77.48%
+Late Layers Fine-tuning (Layer 3,4) - Overall Accuracy: 85.00%
+
+Learning Rates Used:
+Classifier & Scratch Training: 0.0006

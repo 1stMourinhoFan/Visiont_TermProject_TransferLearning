@@ -1,0 +1,129 @@
+Using device: cuda
+Classes: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+Train size: 45000, Validation size: 5000
+Data augmentation applied to training set:
+- Random Horizontal Flip (20%)
+- Random Rotation (±15°) (20%)
+- Random Resized Crop (20%)
+- Color Jitter (brightness, contrast, saturation, hue) (20%)
+- Random Grayscale (10%)
+- Gaussian Blur (20%)
+- Random Erasing (10%)
+
+==================================================
+0. ResNet-18 Scratch Training
+==================================================
+Epoch 1/10, Train Loss: 1.5371, Val Loss: 1.2262, LR: 0.000600
+Epoch 2/10, Train Loss: 1.1776, Val Loss: 1.0668, LR: 0.000600
+Epoch 3/10, Train Loss: 1.0284, Val Loss: 1.1041, LR: 0.000600
+Epoch 4/10, Train Loss: 0.9213, Val Loss: 0.9328, LR: 0.000600
+Epoch 5/10, Train Loss: 0.8433, Val Loss: 0.8660, LR: 0.000600
+Epoch 6/10, Train Loss: 0.7943, Val Loss: 0.7800, LR: 0.000600
+Epoch 7/10, Train Loss: 0.7272, Val Loss: 0.7741, LR: 0.000600
+Epoch 8/10, Train Loss: 0.6852, Val Loss: 0.7552, LR: 0.000600
+Epoch 9/10, Train Loss: 0.6515, Val Loss: 0.7111, LR: 0.000600
+Epoch 10/10, Train Loss: 0.6017, Val Loss: 0.7870, LR: 0.000600
+
+총 학습 시간: 235.74초 (3.93분)
+Model saved as 'resnet18_scratch.pth'
+Scratch Training - Overall Test Accuracy: 73.54%
+
+==================================================
+1. ResNet-18 Classifier Training (FC layer only)
+==================================================
+C:\Users\jjiiy\anaconda3\envs\vision_al\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Epoch 1/10, Train Loss: 1.9401, Val Loss: 1.6551, LR: 0.000600
+Epoch 2/10, Train Loss: 1.7531, Val Loss: 1.5949, LR: 0.000600
+Epoch 3/10, Train Loss: 1.7153, Val Loss: 1.5509, LR: 0.000600
+Epoch 4/10, Train Loss: 1.7054, Val Loss: 1.5391, LR: 0.000600
+Epoch 5/10, Train Loss: 1.6838, Val Loss: 1.5265, LR: 0.000600
+Epoch 6/10, Train Loss: 1.6784, Val Loss: 1.5432, LR: 0.000600
+Epoch 7/10, Train Loss: 1.6783, Val Loss: 1.5374, LR: 0.000600
+Epoch 8/10, Train Loss: 1.6772, Val Loss: 1.5357, LR: 0.000600
+Epoch 9/10, Train Loss: 1.6680, Val Loss: 1.5188, LR: 0.000600
+Epoch 10/10, Train Loss: 1.6648, Val Loss: 1.5208, LR: 0.000600
+
+총 학습 시간: 220.06초 (3.67분)
+Model saved as 'resnet18_classifier.pth'
+Classifier Training - Overall Test Accuracy: 46.78%
+
+==================================================
+2. ResNet-18 Whole Training (All layers)
+==================================================
+Epoch 1/10, Train Loss: 1.0393, Val Loss: 0.7323, LR: 0.000600
+Epoch 2/10, Train Loss: 0.7440, Val Loss: 0.6336, LR: 0.000600
+Epoch 3/10, Train Loss: 0.6449, Val Loss: 0.6167, LR: 0.000600
+Epoch 4/10, Train Loss: 0.5759, Val Loss: 0.5416, LR: 0.000600
+Epoch 5/10, Train Loss: 0.5308, Val Loss: 0.5442, LR: 0.000600
+Epoch 6/10, Train Loss: 0.4888, Val Loss: 0.5467, LR: 0.000600
+Epoch 7/10, Train Loss: 0.4534, Val Loss: 0.5341, LR: 0.000600
+Epoch 8/10, Train Loss: 0.4279, Val Loss: 0.5288, LR: 0.000600
+Epoch 9/10, Train Loss: 0.4027, Val Loss: 0.5485, LR: 0.000600
+Epoch 10/10, Train Loss: 0.3878, Val Loss: 0.5251, LR: 0.000600
+
+총 학습 시간: 233.56초 (3.89분)
+Model saved as 'resnet18_whole_layer.pth'
+Whole_layer Training - Overall Test Accuracy: 83.51%
+
+==================================================
+3. ResNet-18 last Layers Fine-tuning (Layer 4 + FC)
+==================================================
+Epoch 1/10, Train Loss: 1.3014, Val Loss: 0.9456, LR: 0.000600
+Epoch 2/10, Train Loss: 1.0348, Val Loss: 0.8806, LR: 0.000600
+Epoch 3/10, Train Loss: 0.9602, Val Loss: 0.8480, LR: 0.000600
+Epoch 4/10, Train Loss: 0.8989, Val Loss: 0.8445, LR: 0.000600
+Epoch 5/10, Train Loss: 0.8620, Val Loss: 0.8090, LR: 0.000600
+Epoch 6/10, Train Loss: 0.8168, Val Loss: 0.8067, LR: 0.000600
+Epoch 7/10, Train Loss: 0.7864, Val Loss: 0.7998, LR: 0.000600
+Epoch 8/10, Train Loss: 0.7570, Val Loss: 0.8002, LR: 0.000600
+Epoch 9/10, Train Loss: 0.7354, Val Loss: 0.8008, LR: 0.000600
+Epoch 10/10, Train Loss: 0.7135, Val Loss: 0.8163, LR: 0.000600
+
+총 학습 시간: 220.96초 (3.68분)
+Model saved as 'resnet18_last_layer.pth'
+Last Layers Fine-tuning - Overall Test Accuracy: 73.07%
+
+==================================================
+4. ResNet-18 Late Layers Fine-tuning (Layer 3,4 + FC)
+==================================================
+Epoch 1/10, Train Loss: 1.0763, Val Loss: 0.7535, LR: 0.000600
+Epoch 2/10, Train Loss: 0.8011, Val Loss: 0.6593, LR: 0.000600
+Epoch 3/10, Train Loss: 0.7051, Val Loss: 0.6419, LR: 0.000600
+Epoch 4/10, Train Loss: 0.6432, Val Loss: 0.5980, LR: 0.000600
+Epoch 5/10, Train Loss: 0.5976, Val Loss: 0.6160, LR: 0.000600
+Epoch 6/10, Train Loss: 0.5567, Val Loss: 0.5783, LR: 0.000600
+Epoch 7/10, Train Loss: 0.5197, Val Loss: 0.5678, LR: 0.000600
+Epoch 8/10, Train Loss: 0.4808, Val Loss: 0.5669, LR: 0.000600
+Epoch 9/10, Train Loss: 0.4604, Val Loss: 0.6066, LR: 0.000600
+Epoch 10/10, Train Loss: 0.4331, Val Loss: 0.5868, LR: 0.000600
+
+총 학습 시간: 222.62초 (3.71분)
+Model saved as 'resnet18_last_layer.pth'
+Late Layers Fine-tuning - Overall Test Accuracy: 81.38%
+
+==================================================
+SUMMARY OF RESULTS
+==================================================
+Scratch Training - Overall Accuracy: 73.54%
+Classifier Training (FC only) - Overall Accuracy: 46.78%
+Whole Training - Overall Accuracy: 83.51%
+Last Layers Fine-tuning (Layer 4) - Overall Accuracy: 73.07%
+Late Layers Fine-tuning (Layer 3,4) - Overall Accuracy: 81.38%
+
+Learning Rates Used:
+Classifier & Scratch Training: 0.0006
+=== Training Time Analysis ===
+Fastest method: Classifier
+(FC only) (220.1s)
+Slowest method: Scratch
+Training (235.7s)
+Speed difference: 1.1× slower
+Time saved by fastest: 15.7s (0.3 min)
+
+Detailed comparison:
+Scratch Training: 235.7s (1.1× baseline)
+Classifier (FC only): 220.1s (1.0× baseline)
+Last Layers (Layer 4): 221.0s (1.0× baseline)
+Late Layers (Layer 3,4): 222.6s (1.0× baseline)
+Whole Layers Training: 233.6s (1.1× baseline)
